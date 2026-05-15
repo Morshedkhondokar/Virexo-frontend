@@ -2,6 +2,7 @@ import BestSeller from "./BestSeller"
 import CategorySection from "./CategorySection"
 import CollectionSection from "./CollectionSection"
 import HeroSection from "./HeroSection"
+import NewsfeedSection from "./NewsfeedSection"
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <CategorySection/>
       <CollectionSection/>
       <BestSeller/>
+      <NewsfeedSection/>
     </div>
   )
 }

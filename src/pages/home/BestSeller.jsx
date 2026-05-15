@@ -33,14 +33,14 @@ const BestSeller = () => {
     fetchProducts();
   }, []);
 
-  console.log("Products state:", products); // Should show 6 items
+  console.log("Products state:", products); 
 
   // Loading State
   if (loading) {
     return (
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex items-center justify-center min-h-[300px]">
+          <div className="flex items-center justify-center min-h-75">
             <div className="w-8 h-8 border-2 border-gray-200 border-t-black rounded-full animate-spin" />
           </div>
         </div>
@@ -62,7 +62,7 @@ const BestSeller = () => {
   }
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section className="py-16 lg:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
         {/* Section Header */}
