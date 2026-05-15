@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section className="relative w-full bg-white overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[85vh] py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center lg:h-[90vh] py-10">
           
           {/* Left Content */}
           <motion.div
