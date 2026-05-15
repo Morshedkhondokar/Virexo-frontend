@@ -94,7 +94,7 @@ const CategorySection = () => {
               className="group flex flex-col items-center gap-3 cursor-pointer shrink-0"
             >
               {/* Circular Image */}
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 lg:w-20 lg:h-20 rounded-full overflow-hidden
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 lg:w-30 lg:h-30 rounded-full overflow-hidden
                bg-gray-100 ring-2 ring-transparent group-hover:ring-black transition-all duration-300">
                 <img
                   src={category.image}

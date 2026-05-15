@@ -1,4 +1,3 @@
-// Navbar.jsx (Parent - manages search state)
 import { useState } from "react";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileNavbar from "./MobileNavbar";
@@ -29,7 +28,6 @@ const Navbar = () => {
     e.preventDefault();
     if (searchQuery.trim()) {
       console.log("Searching for:", searchQuery);
-      // Navigate to search results: navigate(`/search?q=${searchQuery}`)
       closeSearch();
     }
   };

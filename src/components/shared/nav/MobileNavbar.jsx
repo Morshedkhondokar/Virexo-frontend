@@ -1,4 +1,4 @@
-// MobileNavbar.jsx
+// MobileNavbar.jsx (Separate file)
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
@@ -33,10 +33,12 @@ const MobileNavbar = ({
     };
   }, [isOpen]);
 
-  // Close on route change
+  // Close on route change - FIXED: removed onClose from deps
   useEffect(() => {
-    onClose();
-  }, [location.pathname, onClose]);
+    if (isOpen) {
+      onClose();
+    }
+  }, [location.pathname]); // Only depend on pathname
 
   const backdropVariants = {
     hidden: { opacity: 0 },
@@ -90,18 +92,15 @@ const MobileNavbar = ({
           >
             <div className="flex flex-col h-full">
               
-              {/* Header with Logo + Cart/Wishlist Icons */}
+              {/* Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
                 <Logo size="small" />
                 
-                {/* Right Side Icons */}
                 <div className="flex items-center gap-2">
-                  {/* Cart Icon */}
                   <Link
                     to="/cart"
                     onClick={onClose}
                     className="relative p-2 text-gray-500 hover:text-black hover:bg-gray-50 rounded-lg transition-all"
-                    aria-label="Cart"
                   >
                     <FiShoppingCart className="w-5 h-5" />
                     <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-black text-white text-[10px] font-bold rounded-full flex items-center justify-center">
@@ -109,12 +108,10 @@ const MobileNavbar = ({
                     </span>
                   </Link>
 
-                  {/* Wishlist Icon */}
                   <Link
                     to="/wishlist"
                     onClick={onClose}
                     className="relative p-2 text-gray-500 hover:text-black hover:bg-gray-50 rounded-lg transition-all"
-                    aria-label="Wishlist"
                   >
                     <FiHeart className="w-5 h-5" />
                     <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-black text-white text-[10px] font-bold rounded-full flex items-center justify-center">
@@ -122,12 +119,10 @@ const MobileNavbar = ({
                     </span>
                   </Link>
 
-                  {/* Close Button */}
                   <motion.button
                     whileTap={{ scale: 0.9 }}
                     onClick={onClose}
                     className="p-2 text-gray-500 hover:text-black hover:bg-gray-50 rounded-lg transition-colors ml-1"
-                    aria-label="Close menu"
                   >
                     <FiX className="w-5 h-5" />
                   </motion.button>
@@ -161,7 +156,6 @@ const MobileNavbar = ({
                   )}
                 </form>
                 
-                {/* Quick Suggestions */}
                 <div className="mt-3 flex flex-wrap gap-2">
                   {["iPhone", "AirPods", "Sony", "Samsung"].map((term) => (
                     <button
