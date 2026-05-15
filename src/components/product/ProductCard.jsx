@@ -41,6 +41,7 @@ const ProductCard = ({ product }) => {
         border border-gray-100
         hover:border-gray-200
         transition-all duration-500
+        shadow-sm
         hover:shadow-xl
       "
     >

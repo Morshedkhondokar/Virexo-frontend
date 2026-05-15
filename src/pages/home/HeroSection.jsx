@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router";
+import HeroImage from "../../assets/hero.png";
 
 const HeroSection = () => {
   return (
@@ -58,9 +59,9 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="flex items-center justify-center lg:justify-end"
           >
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gray-50 rounded-3xl flex items-center justify-center">
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-100 lg:h-full flex items-center justify-center">
               <img
-                src="https://i.pinimg.com/1200x/6e/86/d5/6e86d534300404b64375739e18064a77.jpg"
+                src={HeroImage}
                 alt="Premium Headphones"
                 className="w-full h-full object-contain rounded-2xl"
               />
