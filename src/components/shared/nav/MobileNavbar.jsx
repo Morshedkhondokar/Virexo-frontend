@@ -2,23 +2,10 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  FiX, 
-  FiSearch, 
-  FiShoppingCart, 
-  FiUser, 
-  FiHeart
-} from "react-icons/fi";
+import { FiX, FiShoppingCart, FiUser, FiHeart } from "react-icons/fi";
 import Logo from "../Logo";
 
-const MobileNavbar = ({ 
-  links, 
-  isOpen, 
-  onClose,
-  searchQuery,
-  onSearchChange,
-  onSearchSubmit
-}) => {
+const MobileNavbar = ({ links, isOpen, onClose }) => {
   const location = useLocation();
 
   // Lock body scroll
@@ -48,11 +35,11 @@ const MobileNavbar = ({
 
   const panelVariants = {
     hidden: { x: "100%" },
-    visible: { 
+    visible: {
       x: 0,
       transition: { type: "spring", damping: 30, stiffness: 300 },
     },
-    exit: { 
+    exit: {
       x: "100%",
       transition: { type: "spring", damping: 35, stiffness: 300 },
     },
@@ -91,11 +78,10 @@ const MobileNavbar = ({
             className="fixed inset-y-0 right-0 z-50 w-[90%] max-w-sm bg-white md:hidden shadow-2xl"
           >
             <div className="flex flex-col h-full">
-              
               {/* Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
                 <Logo size="small" />
-                
+
                 <div className="flex items-center gap-2">
                   <Link
                     to="/cart"
@@ -129,46 +115,6 @@ const MobileNavbar = ({
                 </div>
               </div>
 
-              {/* Search */}
-              <motion.div 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="px-5 py-4 border-b border-gray-100"
-              >
-                <form onSubmit={onSearchSubmit} className="relative">
-                  <FiSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => onSearchChange(e.target.value)}
-                    placeholder="Search products..."
-                    className="w-full pl-10 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:bg-white transition-all"
-                  />
-                  {searchQuery && (
-                    <button
-                      type="button"
-                      onClick={() => onSearchChange("")}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black transition-colors"
-                    >
-                      <FiX className="w-4 h-4" />
-                    </button>
-                  )}
-                </form>
-                
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {["iPhone", "AirPods", "Sony", "Samsung"].map((term) => (
-                    <button
-                      key={term}
-                      onClick={() => onSearchChange(term)}
-                      className="text-xs px-3 py-1.5 bg-gray-100 text-gray-600 rounded-full hover:bg-gray-200 hover:text-black transition-all"
-                    >
-                      {term}
-                    </button>
-                  ))}
-                </div>
-              </motion.div>
-
               {/* Navigation Links */}
               <nav className="flex-1 px-5 py-4 overflow-y-auto">
                 <ul className="space-y-1">
@@ -200,7 +146,7 @@ const MobileNavbar = ({
               </nav>
 
               {/* Sign In Button */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}

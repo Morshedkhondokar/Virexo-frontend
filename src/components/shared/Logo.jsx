@@ -31,7 +31,7 @@ const Logo = ({ size = "default", showText = true, className = "" }) => {
         <FiShoppingBag className={`${currentSize.icon} text-white`} />
       </div>
       {showText && (
-        <span className={`${currentSize.text} font-bold tracking-tight text-gray-900`}>
+        <span className={`${currentSize.text} ${className} font-bold tracking-tight text-gray-900`}>
           Virexo
         </span>
       )}
