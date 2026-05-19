@@ -58,7 +58,7 @@ const NewsletterSection = () => {
             {/* Email Form */}
             <form onSubmit={handleSubmit} className="relative max-w-md mx-auto lg:mx-0">
               <div className="flex items-center border-b-2 border-gray-300 focus-within:border-black transition-colors pb-2">
-                <FiMail className="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
+                <FiMail className="w-5 h-5 text-gray-400 mr-3 shrink-0" />
                 <input
                   type="email"
                   value={email}

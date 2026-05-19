@@ -4,8 +4,8 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import NotFound from "./pages/NotFound";
 import Layout from "./layout/Layout";
-import Product from "./pages/Product/Product";
 import Contact from "./pages/Contact/Contact";
+import ProductsPage from "./pages/Product/ProductsPage";
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
             element={<Home />}
           />
           {/* Add more pages that need navbar here */}
-          <Route element={<Product />} path="/products" />
+          <Route element={<ProductsPage />} path="/products" />
           <Route element={<Contact />} path="/contact" />
         </Route>
 
